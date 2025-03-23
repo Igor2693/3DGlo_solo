@@ -1,9 +1,7 @@
-'use strict'
+
 
 const oneFunc = () => {
-    console.log('one');
+    console.log('one');    
 }
-
-
 
 export default oneFunc
