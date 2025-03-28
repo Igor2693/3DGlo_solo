@@ -1,3 +1,3 @@
-import one from "./modules/one";
+import timer from "./modules/timer";
 
-one()
+timer()
