@@ -26,7 +26,7 @@ eval("(function(N,O){ true?O(exports):0})(this,function(N){function O(a){var c=f
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scroll */ \"./src/modules/scroll.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/menu */ \"./src/modules/menu.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('1 august 2025')\r\n;(0,_modules_scroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n\n\n//# sourceURL=webpack://3dglo_solo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scroll */ \"./src/modules/scroll.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/menu */ \"./src/modules/menu.js\");\n/* harmony import */ var _modules_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/popup */ \"./src/modules/popup.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('1 august 2025')\r\n;(0,_modules_scroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n;(0,_modules_popup__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()\r\n\n\n//# sourceURL=webpack://3dglo_solo/./src/index.js?");
 
 /***/ }),
 
@@ -38,6 +38,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var neo_async__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! neo-async */ \"./node_modules/neo-async/async.min.js\");\n/* harmony import */ var neo_async__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(neo_async__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\n;\r\n\r\nconst menu = () => {\r\n    const menuBtn = document.querySelector('.menu')\r\n    const menu = document.querySelector('menu')\r\n    const closeBtn = menu.querySelector('.close-btn')\r\n    const links = menu.querySelectorAll('ul>li>a')\r\n\r\n    const actionMenu = () => {\r\n        if (!menu.style.transform) {\r\n            menu.style.transform = `translateX(50%)`\r\n        } else {\r\n            menu.style.transform = ''\r\n        }\r\n    }\r\n\r\n\r\n    menuBtn.addEventListener('click', actionMenu)\r\n\r\n    closeBtn.addEventListener('click', actionMenu)\r\n\r\n    links.forEach(function (link) {\r\n        link.addEventListener('click', actionMenu)\r\n    })\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);\n\n//# sourceURL=webpack://3dglo_solo/./src/modules/menu.js?");
+
+/***/ }),
+
+/***/ "./src/modules/popup.js":
+/*!******************************!*\
+  !*** ./src/modules/popup.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n\r\nconst popup = () => {\r\n    const popupBtn = document.querySelectorAll('.popup-btn')\r\n    const popup = document.querySelector('.popup')\r\n    const popupClose = popup.querySelector('.popup-close')\r\n\r\n    popupBtn.forEach(function (btn) {\r\n        btn.addEventListener('click', () => {\r\n            if (popup.style.display = 'none') {\r\n                popup.style.display = 'block'\r\n            }\r\n        })\r\n\r\n    })\r\n\r\n    popupClose.addEventListener('click', () => {\r\n        popup.style.display = 'none'\r\n    })\r\n\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (popup);\n\n//# sourceURL=webpack://3dglo_solo/./src/modules/popup.js?");
 
 /***/ }),
 
