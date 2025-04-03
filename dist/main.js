@@ -16,7 +16,27 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('27 september 2025')\r\n\n\n//# sourceURL=webpack://3dglo_solo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/timer */ \"./src/modules/timer.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scroll */ \"./src/modules/scroll.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/menu */ \"./src/modules/menu.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('1 august 2025')\r\n;(0,_modules_scroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n;(0,_modules_menu__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n\n\n//# sourceURL=webpack://3dglo_solo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/menu.js":
+/*!*****************************!*\
+  !*** ./src/modules/menu.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n\r\nconst menu = () => {\r\n    console.log('menu');\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);\n\n//# sourceURL=webpack://3dglo_solo/./src/modules/menu.js?");
+
+/***/ }),
+
+/***/ "./src/modules/scroll.js":
+/*!*******************************!*\
+  !*** ./src/modules/scroll.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n\r\nconst scroll = () => {\r\n    const scrollImg = document.querySelector('.img_scroll')\r\n    let count = 0\r\n    let idAnimation\r\n\r\n\r\n    const animationScroll = () => {\r\n        count++\r\n        idAnimation = requestAnimationFrame(animationScroll)\r\n        console.log(document.documentElement.scrollTop);\r\n        if (document.documentElement.scrollTop <= 776) {\r\n            console.log(document.documentElement.scrollTop);\r\n            document.documentElement.scrollTop = (count * 10)\r\n        } else {\r\n            cancelAnimationFrame(idAnimation)\r\n            count = 0\r\n            console.log(document.documentElement.scrollTop);\r\n        }\r\n        console.log(document.documentElement.scrollTop);\r\n\r\n\r\n    }\r\n\r\n    scrollImg.addEventListener('click', () => {\r\n        animationScroll()\r\n\r\n\r\n    })\r\n\r\n\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scroll);\n\n//# sourceURL=webpack://3dglo_solo/./src/modules/scroll.js?");
 
 /***/ }),
 
