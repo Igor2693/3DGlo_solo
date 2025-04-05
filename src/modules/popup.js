@@ -1,22 +1,127 @@
 'use strict'
 
 const popup = () => {
-    const popupBtn = document.querySelectorAll('.popup-btn')
-    const popup = document.querySelector('.popup')
-    const popupClose = popup.querySelector('.popup-close')
+    const links = document.querySelectorAll('.popup-btn')
+    const modal = document.querySelector('.popup')
+    const closeBtn = modal.querySelector('.popup-close')
+    let width = screen.width
+    console.log(width);
 
-    popupBtn.forEach(function (btn) {
-        btn.addEventListener('click', () => {
-            if (popup.style.display = 'none') {
-                popup.style.display = 'block'
-            }
+
+
+    let count = 0
+    let idAnimation
+
+    if (width > 768) {
+        links.forEach(function (item) {
+            item.addEventListener('click', () => {
+
+                const modalOn = () => {
+                    count++
+                    idAnimation = requestAnimationFrame(modalOn)
+                    console.log(count);
+                    modal.style.display = 'block'
+
+                    if (count < 100) {
+                        modal.style.opacity = count * 2 + '%'
+                        console.log(count);
+
+                    } else {
+                        cancelAnimationFrame(idAnimation)
+                    }
+                }
+                modalOn()
+            })
         })
 
-    })
 
-    popupClose.addEventListener('click', () => {
-        popup.style.display = 'none'
-    })
+        closeBtn.addEventListener('click', () => {
+
+
+            const modalOff = () => {
+                count--
+                idAnimation = requestAnimationFrame(modalOff)
+                console.log(count);
+
+
+                if (count > 0) {
+                    modal.style.opacity = count + '%'
+                    console.log(count);
+
+                } else {
+                    cancelAnimationFrame(idAnimation)
+                    modal.style.display = 'none'
+
+                }
+            }
+            modalOff()
+
+        })
+
+
+    } else {
+        links.forEach(function (btn) {
+            btn.addEventListener('click', () => {
+                if (modal.style.display = 'none') {
+                    modal.style.display = 'block'
+                }
+            })
+
+        })
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none'
+        })
+
+
+    }
+
+    // links.forEach(function (item) {
+    //     item.addEventListener('click', () => {
+
+    //         const modalOn = () => {
+    //             count++
+    //             idAnimation = requestAnimationFrame(modalOn)
+    //             console.log(count);
+    //             modal.style.display = 'block'
+
+    //             if (count < 100) {
+    //                 modal.style.opacity = count * 2 + '%'
+    //                 console.log(count);
+
+    //             } else {
+    //                 cancelAnimationFrame(idAnimation)
+    //             }
+    //         }
+    //         modalOn()
+    //     })
+    // })
+
+    // closeBtn.addEventListener('click', () => {
+
+
+    //     const modalOff = () => {
+    //         count--
+    //         idAnimation = requestAnimationFrame(modalOff)
+    //         console.log(count);
+
+
+    //         if (count > 0) {
+    //             modal.style.opacity = count + '%'
+    //             console.log(count);
+
+    //         } else {
+    //             cancelAnimationFrame(idAnimation)
+    //             modal.style.display = 'none'
+
+    //         }
+    //     }
+    //     modalOff()
+
+
+
+    //     // modal.style.display = 'none'
+    // })
 
 
 }

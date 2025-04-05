@@ -4,27 +4,44 @@ const menu = () => {
     const menuBtn = document.querySelector('.menu')
     const menu = document.querySelector('menu')
     const closeBtn = menu.querySelector('.close-btn')
-    const links = menu.querySelectorAll('ul>li>a')
+    const links = menu.querySelectorAll('ul > li > a')
 
-    const actionMenu = () => {
+
+    const menuActive = () => {
         if (!menu.style.transform) {
-            menu.style.transform = `translateX(50%)`
             document.body.style.overflow = 'hidden'
+            menu.style.transform = `translateX(50%)`
         } else {
             menu.style.transform = ''
             document.body.style.overflow = ''
         }
     }
 
+    menuBtn.addEventListener('click', menuActive)
 
-    menuBtn.addEventListener('click', actionMenu)
-
-    closeBtn.addEventListener('click', actionMenu)
+    closeBtn.addEventListener('click', menuActive)
 
     links.forEach(function (link) {
-        link.addEventListener('click', actionMenu)
-    })
+        link.addEventListener('click', (event) => {
+            event.preventDefault()
 
+            if (!menu.style.transform) {
+                document.body.style.overflow = 'hidden'
+                menu.style.transform = `translateX(50%)`
+            } else {
+                menu.style.transform = ''
+                document.body.style.overflow = ''
+            }
+            const block = event.target.getAttribute('href').substr(1)
+
+            document.getElementById(block).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+
+        })
+
+    })
 }
 
 export default menu
