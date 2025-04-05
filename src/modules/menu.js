@@ -1,7 +1,5 @@
 'use strict'
 
-import { log } from "neo-async"
-
 const menu = () => {
     const menuBtn = document.querySelector('.menu')
     const menu = document.querySelector('menu')
@@ -11,8 +9,10 @@ const menu = () => {
     const actionMenu = () => {
         if (!menu.style.transform) {
             menu.style.transform = `translateX(50%)`
+            document.body.style.overflow = 'hidden'
         } else {
             menu.style.transform = ''
+            document.body.style.overflow = ''
         }
     }
 
