@@ -4,15 +4,17 @@ const popup = () => {
     const links = document.querySelectorAll('.popup-btn')
     const modal = document.querySelector('.popup')
     const closeBtn = modal.querySelector('.popup-close')
-    let width = screen.width
-    console.log(width);
+
+    const media = window.matchMedia('(min-width: 768px)')
+    console.log(media);
+
 
 
 
     let count = 0
     let idAnimation
 
-    if (width > 768) {
+    if (media.matches) {
         links.forEach(function (item) {
             item.addEventListener('click', () => {
 
