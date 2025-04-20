@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Igor2693/3DGlo_solo#readme",
   "devDependencies": {
-    "webpack": "^5.98.0",
+    "webpack": "^5.99.6",
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
