@@ -5,6 +5,7 @@ import popup from "./modules/popup";
 import reg from "./modules/reg";
 import tabs from "./modules/tabs";
 import slider from "./modules/slider";
+import calc from "./modules/calc";
 
 
 timer('1 august 2025')
@@ -14,3 +15,4 @@ popup()
 reg()
 tabs()
 slider()
+calc()
